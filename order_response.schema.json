@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "order_response.schema.json",
+  "title": "GroceryOrderAIResponse",
+  "description": "Structured output from extract_order_with_ai",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "items",
+    "needs_clarification",
+    "clarification_questions",
+    "customer_language",
+    "notes"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "quantity"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "needs_clarification": {
+      "type": "boolean"
+    },
+    "clarification_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "customer_language": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
