@@ -212,17 +212,3 @@ def demo() -> None:
     print("3) sending to shop:\n", manager.send_to_shop(o["id"]))
     print("4)", manager.accept_order(o["id"]))
 
-if __name__ == "__main__":
-    import sys
-
-    manager = OrderManager()
-
-    message = sys.argv[1] if len(sys.argv) > 1 else ""
-
-    order = manager.create_order("cust_cli", message)
-
-    print("\n=== ORDER CREATED ===")
-    print("ID:", order["id"])
-    print("STATUS:", order["status"])
-    print("SYSTEM:", order["last_system_message"])
-    print("ITEMS:", order["items"])
