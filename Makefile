@@ -1,4 +1,7 @@
-.PHONY: test test-integration
+.PHONY: test test-integration run
+
+run:
+	python whatsapp_webhook.py
 
 test:
 	pytest
