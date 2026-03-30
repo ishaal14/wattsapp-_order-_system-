@@ -1,0 +1,9 @@
+# Local secrets — copy from `.env.example` and fill in values
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
