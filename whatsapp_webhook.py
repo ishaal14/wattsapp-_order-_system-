@@ -138,3 +138,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+else:
+    # For gunicorn on Railway
+    app = create_app()
