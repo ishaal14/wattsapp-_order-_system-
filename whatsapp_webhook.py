@@ -128,12 +128,6 @@ def create_app() -> Flask:
 app = create_app()
 
 
-def main() -> None:
-    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    _load_env()
-    port = int(os.getenv("PORT", "5000"))
-    host = os.getenv("HOST", "0.0.0.0")
-    app.run(host=host, port=port, debug=False)
 
 
 # Create app instance for gunicorn
