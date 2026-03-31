@@ -125,15 +125,14 @@ def create_app() -> Flask:
     return app
 
 
+# Single app instance for gunicorn
 app = create_app()
 
-
-
-
-# Create app instance for gunicorn
-app = create_app()
+# Add root route for testing
+@app.route('/')
+def home():
+    return 'WhatsApp Webhook is running!', 200
 
 if __name__ == "__main__":
+    # For local development only
     app.run(host='0.0.0.0', port=5000)
-if __name__ != "__main__":
-    app.run(host='0.0.0.0', port=8080)
