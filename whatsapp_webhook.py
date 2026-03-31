@@ -136,8 +136,8 @@ def main() -> None:
     app.run(host=host, port=port, debug=False)
 
 
+# Create app instance for gunicorn
+app = create_app()
+
 if __name__ == "__main__":
-    main()
-else:
-    # For gunicorn on Railway
-    app = create_app()
+    app.run(host='0.0.0.0', port=5000)
